@@ -1,0 +1,90 @@
+.section {
+  padding: 80px 0;
+}
+/* layout principal-grid com 2 colunas e alinhamento central */
+.container {
+  max-width: 1248px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #44698a;
+  display: inline-flex;
+  align-items: flex-start; 
+  gap: 4px; 
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  max-width: 490px;
+}
+
+.textBox p {
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 15px;
+  max-width: 480px;
+  color: #000000;
+}
+
+/* estilizacao button */
+.button {
+  padding: 12px 26px;
+  border-radius: 20px;
+  background-color: #0c4a6e;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: #0a3a57;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-auto-rows: 140px; 
+  gap: 12px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0; 
+  transition: 0.3s;
+}
+
+
+.gallery img:hover {
+  transform: scale(1.02);
+}
+
+
+.gallery img:nth-child(4) {
+  grid-column: 1 / 3; 
+  grid-row: 2 / 3;    
+  height: 160px; 
+  width:300px;     
+}
+
+.gallery img:nth-child(5) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  height: 160px; 
+  width: 280px;     
+}
+

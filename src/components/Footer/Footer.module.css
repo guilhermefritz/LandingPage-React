@@ -1,0 +1,89 @@
+.footer {
+  background: #242323;
+  padding: 60px 0 0 0;
+  color: #e5e5e5;
+  position:relative;
+}
+
+.container {
+  max-width: 1248px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+}
+
+.column h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.column p {
+  line-height: 1.5;
+  font-size: 0.95rem;
+  color: #cfcfcf;
+  max-width: 260px;
+}
+.column:first-child {
+  margin-left: 100px; /* ajusta conforme quiser */
+}
+
+
+.logo {
+  height: 60px;
+  margin-bottom: 14px;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #cfcfcf;
+  cursor: pointer;
+   list-style: none; 
+}
+
+.column li:hover {
+  color: #ffffff;
+}
+
+/* SOCIAL ICONS */
+.social {
+  display: flex;
+  gap: 12px;
+}
+
+.social a {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #555;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cfcfcf;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.social a:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+/* COPYRIGHT */
+.bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  background-color: #3a3838;
+  color: #ece6e6;
+  border-top: 1px solid #020202;
+  margin-top:4px;
+  
+}
