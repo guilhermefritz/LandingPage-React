@@ -12,6 +12,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  overflow-x:hidden;
+  
 }
 
 .app {
@@ -20,11 +22,7 @@ body {
 }
 
 /* Classes de utilitários globais */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
+
 
 .text-center {
   text-align: center;
@@ -34,11 +32,7 @@ body {
   display: flex;
 }
 
-.column li a {
-  display: block;
-  width: 100%;
-  cursor: pointer;
-}
+
 
 
 .items-center {

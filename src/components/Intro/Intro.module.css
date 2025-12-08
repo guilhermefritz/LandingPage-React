@@ -1,6 +1,6 @@
 /* -------------------- INTRO -------------------- */
 .intro {
-  background: #f7f5f3;
+  background: #F5F2EF;
   padding: 80px 0 120px;
 }
 
@@ -31,7 +31,7 @@
   margin-bottom: 18px;
   line-height: 1.25;
   font-weight: 700;
-  max-width: 380px;
+  max-width: 480px;
 }
 
 .text p {
@@ -42,24 +42,18 @@
 }
 
 /* -------------------- BOTÕES -------------------- */
-.whatsappButton,
-.button {
+.whatsappButton {
   border: none;
   border-radius: 50px;
   font-weight: 600;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
   color: #fff;
+  padding: 14px 32px; /* valor final desejado */
+  background: #1f4e8a; /* valor final desejado */
 }
-
-.whatsappButton {
-  padding: 12px 26px;
-  background-color: #0c4a6e;
-}
-
-.button {
-  padding: 14px 32px;
-  background: #1f4e8a;
+.whatsappButton:hover {
+  background: #0a3a57;
 }
 
 /* -------------------- IMAGEM -------------------- */

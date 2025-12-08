@@ -4,7 +4,7 @@ import styles from "./Sobre.module.css";
 const Sobre = () => {
   return (
     <section id="sobre" className={styles.section}>
-      {/* Forma azul no lado esquerdo (apenas desktop) */}
+      {/* Forma azul no lado esquerdo  */}
       <div className={styles.blueBackground}></div>
       
       {/* Emblemas decorativos (apenas desktop) */}

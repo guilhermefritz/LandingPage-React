@@ -1,10 +1,8 @@
-.faq-responsivo .container {
+.faqResponsivo .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
-  background-color: #f5f5f5;
-  align-items: start;
 }
+
 
 /* Lados esquerdo e direito */
 .left,
@@ -120,7 +118,22 @@
 
 .whatsappButton{
   
+ 
+  padding: 12px 26px;
+  border-radius: 20px;
+  background-color: #0c4a6e;
+  border: none;
+  color: #fff;
   font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.8px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+
 }
 
 

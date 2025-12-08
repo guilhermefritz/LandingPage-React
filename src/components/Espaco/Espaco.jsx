@@ -8,9 +8,9 @@ const Espaco = () => {
         
         {/* TEXTO */}
         <div className={styles.textBox}>
-          <span className={styles.label}>▆ Cada Pessoa Tem Sua História</span>
+          <span className={styles.sectionMarker}>▆ Cada Pessoa Tem Sua História</span>
 
-          <h2 className={styles.title}>
+          <h2 className={styles.sectionTitle}>
             Sua história é o ponto de partida, não um rótulo.
           </h2>
 
@@ -21,7 +21,7 @@ const Espaco = () => {
             Seja uma mãe cansada tentando se encontrar de novo, um profissional sobrecarregado, um pai buscando clareza no desenvolvimento do filho ou alguém que já tentou terapia e não se sentiu visto.
           </p>
 
-          <button className={styles.button}>
+          <button className={styles.whatsappButton}>
             <i className="fa-brands fa-whatsapp"></i> ENTRE EM CONTATO
           </button>
         </div>

@@ -39,67 +39,64 @@ const Faq = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  return (
-    <div id='faq' className={styles.container}>
-      
-      {/* lado esquerdo faq accordion */}
-      <div id='faq' className={styles.left}>
-        
+  
 
-        <div className={styles.accordion}>
-          {faqs.map((item, index) => (
-            <div key={index} className={styles.accordionItem}>
-              
-              <button
-                className={styles.accordionButton}
-                onClick={() => toggleAccordion(index)}
-              >
-                <span>{item.question}</span>
-                <span
-  className={
-    openIndex === index
-      ? styles.caretOpen
-      : styles.caret
-  }
-/>
+ return (
+    <div className={styles.faqResponsivo}>
+      <div id="faq" className={styles.container}>
 
-              </button>
+        {/* lado esquerdo faq accordion */}
+        <div className={styles.left}>
+          <div className={styles.accordion}>
+            {faqs.map((item, index) => (
+              <div key={index} className={styles.accordionItem}>
+                
+                <button
+                  className={styles.accordionButton}
+                  onClick={() => toggleAccordion(index)}
+                >
+                  <span>{item.question}</span>
+                  <span
+                    className={
+                      openIndex === index
+                        ? styles.caretOpen
+                        : styles.caret
+                    }
+                  />
+                </button>
 
-              <div
-                className={
-                  openIndex === index
-                    ? styles.accordionContentOpen
-                    : styles.accordionContent
-                }
-              >
-                <p>{item.answer}</p>
+                <div
+                  className={
+                    openIndex === index
+                      ? styles.accordionContentOpen
+                      : styles.accordionContent
+                  }
+                >
+                  <p>{item.answer}</p>
+                </div>
               </div>
-
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* lado direito mensagem e button  */}
-      <div className={styles.right}>
-        <span className={styles.sectionMarker}>▆FAQ</span>
+        {/* lado direito mensagem e button */}
+        <div className={styles.right}>
+          <span className={styles.sectionMarker}>▆FAQ</span>
          
-         <h2 className={styles.titleRight}>
-         Perguntas frequentes sobre o serviço da Attuare
-  </h2>
-        <p className={styles.p}>
-        Esclareça dúvidas comuns sobre psicoterapia,nutrição esportiva,cirurgia bariátrica,terapia de casal e constelação familiar.
-        </p>
+          <h2 className={styles.titleRight}>
+            Perguntas frequentes sobre o serviço da Attuare
+          </h2>
+
+          <p className={styles.p}>
+            Esclareça dúvidas comuns sobre psicoterapia, nutrição esportiva,
+            cirurgia bariátrica, terapia de casal e constelação familiar.
+          </p>
 
           <button className={styles.whatsappButton}>
-                        <i className="fa-brands fa-whatsapp"></i> ENTRE EM CONTATO
-                      </button>
+            <i className="fa-brands fa-whatsapp"></i> ENTRE EM CONTATO
+          </button>
+        </div>
 
-
-      
-        
-
-       
       </div>
     </div>
   );

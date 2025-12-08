@@ -19,7 +19,7 @@
   flex-direction: column;
 }
 
-.label {
+.sectionMarker{
   font-size: 0.7rem;
   font-weight: 500;
   color: #44698a;
@@ -31,7 +31,7 @@
   letter-spacing: 0.5px;
 }
 
-.title {
+.sectionTitle{
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
@@ -51,7 +51,7 @@
 }
 
 /* BOTÃO */
-.button {
+.whatsappButton {
   padding: 12px 26px;
   border-radius: 20px;
   background-color: #0c4a6e;
@@ -68,12 +68,12 @@
   width: fit-content;
 }
 
-.button:hover {
+.whatsappButton:hover {
   background: #0a3a57;
   transform: translateY(-2px);
 }
 
-.button i {
+.whatsappButton i {
   font-size: 1.2rem;
 }
 

@@ -3,7 +3,7 @@ import Header from './components/Header/Header';
 import Intro from './components/Intro/Intro';
 
 import Sobre from './components/Sobre/Sobre';
-import Estrategias from './components/Estrategias/Estrategias';
+import Servicos from './components/Servicos/Servicos';
 import Diferencial from './components/Diferencial/Diferencial';
 import Equipe from './components/Equipe/Equipe';
 import Footer from './components/Footer/Footer';
@@ -20,7 +20,7 @@ function App() {
       <main>
         <Intro />
         <Sobre />
-        <Estrategias />
+        <Servicos />
         <Diferencial />
         <Equipe />
         <Passos />

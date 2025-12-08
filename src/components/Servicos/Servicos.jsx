@@ -1,9 +1,9 @@
 {/* importando o modulo correto*/}
-import styles from "./Estrategias.module.css"; 
+import styles from "./Servicos.module.css"; 
 import React, { useState } from 'react';
 
 
-const Estrategias = () => {
+const Servicos = () => {
   {/* forma de lista*/}
   const servicos = [
     {
@@ -69,4 +69,4 @@ const Estrategias = () => {
   );
 };
 
-export default Estrategias;
+export default Servicos;
