@@ -32,6 +32,8 @@ const faqs = [
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  // Lógica do accordion
+{/* Alterna entre abrir/fechar - apenas um item aberto por vez */}
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -41,7 +43,7 @@ const Faq = () => {
     <div id='faq' className={styles.container}>
       
       {/* lado esquerdo faq accordion */}
-      <div className={styles.left}>
+      <div id='faq' className={styles.left}>
         
 
         <div className={styles.accordion}>
@@ -53,9 +55,14 @@ const Faq = () => {
                 onClick={() => toggleAccordion(index)}
               >
                 <span>{item.question}</span>
-                <span className={styles.icon}>
-                  {openIndex === index ? "−" : "↴"}
-                </span>
+                <span
+  className={
+    openIndex === index
+      ? styles.caretOpen
+      : styles.caret
+  }
+/>
+
               </button>
 
               <div
@@ -75,15 +82,18 @@ const Faq = () => {
 
       {/* lado direito mensagem e button  */}
       <div className={styles.right}>
+        <span className={styles.sectionMarker}>▆FAQ</span>
          
          <h2 className={styles.titleRight}>
-         Perguntas frequentes sobre o serviço da Atture
+         Perguntas frequentes sobre o serviço da Attuare
   </h2>
         <p className={styles.p}>
         Esclareça dúvidas comuns sobre psicoterapia,nutrição esportiva,cirurgia bariátrica,terapia de casal e constelação familiar.
         </p>
 
-        <button className={styles.button}>ENTRE EM CONTATO</button>
+          <button className={styles.whatsappButton}>
+                        <i className="fa-brands fa-whatsapp"></i> ENTRE EM CONTATO
+                      </button>
 
 
       

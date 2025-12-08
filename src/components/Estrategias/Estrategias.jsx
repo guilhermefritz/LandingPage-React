@@ -8,32 +8,32 @@ const Estrategias = () => {
   const servicos = [
     {
       numero: "01",
-      titulo: "Terapia Individual",
-      desc: "Terapia individual para superar bloqueios emocionais e promover crescimento pessoal.",
-      icon: "/img-servicos/icone-pessoa.png",
-      imagem: "/img-servicos/prancheta.png"
+      titulo: "Avaliação Neuropsicológica",
+      desc: "Diagnístico detalhado para identificar dificuldades cognitivas e orientar tratamentos.",
+      icon: "/img-servicos/icone-cerebro.png",
+      imagem: "/img-servicos/mulheres.png"
     },
     {
       numero: "02",
-      titulo: "Psicoterapia de Casal",
-      desc: "Melhore sua relação com a terapia de casal, focando em comunicação e resolução de conflitos.",
+      titulo: "Psicoterapia Adulto",
+      desc: "Terapia individual para superar bloqueios emocionais e promover crescimento pessoal",
       icon: "/img-servicos/icone-coracao.png",
-      imagem: "/img-servicos/mulheres.png"
+      imagem: "/img-servicos/prancheta.png"
     },
     {
       numero: "03",
       titulo: "Nutrição Clínica e Esportiva",
       desc: "Planos personalizados para melhorar saúde, desempenho físico e alcançar metas esportivas.",
-      icon: "/img-servicos/icone-coracao.png",
-      imagem: "/img-servicos/mulheres.png"
+      icon: "/img-servicos/icone-pessoa.png",
+      imagem: "/img-servicos/medico.png"
     },
   ];
 
   return (
-    <div className={styles.container}>
-      <span className={styles.label}>NOSSOS SERVIÇOS</span>
+    <div id="servicos" className={styles.container}>
+      <span className={styles.sectionMarker}> ▆ NOSSOS SERVIÇOS</span>
 
-      <h1 className={styles.equipeTitle}>
+      <h1 className={styles.sectionTitle}>
         Desenvolvemos estratégias personalizadas para promover seu Bem-estar
       </h1>
 
@@ -41,7 +41,8 @@ const Estrategias = () => {
       <div className={styles.cardsWrapper}>
         {servicos.map((s, i) => (
           <div className={styles.card} key={i}>
-            
+            // Estrutura dos cards de serviços
+{/* Cards com forma decorativa no canto e numeração sequencial */}
             <div className={styles.shape}></div>
 
             <div className={styles.top}>
@@ -60,7 +61,9 @@ const Estrategias = () => {
       </div>
 
       <div style={{ textAlign: "center", marginTop: "2rem" }}>
-          <button className={styles.button}>ENTRE EM CONTATO</button>
+            <button className={styles.whatsappButton}>
+                          <i className="fa-brands fa-whatsapp"></i> ENTRE EM CONTATO
+                        </button>
       </div>
     </div>
   );

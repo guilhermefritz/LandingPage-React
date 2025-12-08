@@ -6,7 +6,7 @@ import styles from "./Intro.module.css";
  function Intro() {
   return (
     <>
-      <section className={styles.intro}>
+      <section id="inicio" className={styles.intro}>
         <div className={styles.container}>
 
           {/* classe do texto */}
@@ -22,7 +22,11 @@ import styles from "./Intro.module.css";
               mais precioso que você tem: sua saúde emocional.
             </p>
             {/* classe do button */}
-            <button className={styles.button}>FALE CONOSCO</button>
+              
+                        <button className={styles.whatsappButton}>
+
+                          <i className="fa-brands fa-whatsapp"></i> FALE CONOSCO
+                        </button>
           </div>
 
           {/* imagem */}
@@ -41,7 +45,8 @@ import styles from "./Intro.module.css";
       {/* fundo preto */}
       <div className={styles.blackBackground}></div>
 
-      {/* card sobreposto */}
+      // Card sobreposto com estatísticas
+{/* Card flutuante com dados institucionais - posicionamento absoluto */}
       <div className={styles.card}>
         <div className={styles.item}>
           <img src="img-intro/icone-coracao.png" alt="" />
@@ -52,7 +57,7 @@ import styles from "./Intro.module.css";
         </div>
 
         <div className={styles.item}>
-          <img src="img-intro/icone-coracao.png" alt="" />
+          <img src="img-intro/icone-empilhado.png" alt="" />
           <div>
             <h3>+10 anos</h3>
             <p>Anos de experiência</p>
@@ -60,7 +65,7 @@ import styles from "./Intro.module.css";
         </div>
 
         <div className={styles.item}>
-          <img src="img-intro/icone-coracao.png" alt="" />
+          <img src="img-intro/icone-calendario.png" alt="" />
           <div>
             <h3>+20 mil</h3>
             <p>Sessões realizadas</p>

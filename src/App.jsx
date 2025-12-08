@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import Faq from './components/Faq/Faq';
 import Espaco from './components/Espaco/Espaco';
 import Passos from './components/Passos/Passos';
+
 import './index.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Espaco />
         <Faq />
         <Footer />
+        
       </main>
     </div>
   );

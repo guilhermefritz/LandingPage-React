@@ -32,9 +32,9 @@ const Equipe = () => {
   ];
 
   return (
-    <div className={styles.container}>
-       <span className={styles.label}> Nossa Equipe</span>
-       <h1 className={styles.equipeTitle}>Equipe Multidisciplinar de Psicologia e nutrição</h1>
+    <div id="equipe" className={styles.container}>
+       <span className={styles.sectionMarker}> Nossa Equipe</span>
+       <h1 className={styles.sectionTitle}>Equipe Multidisciplinar de Psicologia e nutrição</h1>
       <Swiper
         modules={[Pagination]}
         pagination={{ clickable: true }}
@@ -67,7 +67,9 @@ const Equipe = () => {
         ))}
       </Swiper>
        <div style={{ textAlign: "center", marginTop: "2rem" }}>
-      <button className={styles.button}>ENTRE EM CONTATO</button>
+        <button className={styles.whatsappButton}>
+                      <i className="fa-brands fa-whatsapp"></i> ENTRE EM CONTATO
+                    </button>
 </div>
 
 

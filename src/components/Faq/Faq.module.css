@@ -2,25 +2,31 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100vh;
-  
-  background-color:#f5f5f5;
+  background-color: #f5f5f5;
   align-items: start;
 }
 
-/* lado esquerdo*/
-.left {
-  padding: 10rem 3rem;
+/* Lados esquerdo e direito */
+.left,
+.right {
+  padding: 2rem;
   display: flex;
   flex-direction: column;
 }
 
-/* accordion*/
+.left {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+/* Accordion */
 .accordion {
   margin-top: 2rem;
 }
 
 .accordionItem {
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.9rem 0 0.9rem 40px;
 }
 
 .accordionButton {
@@ -35,64 +41,72 @@
   display: flex;
   justify-content: space-between;
   text-align: left;
+  align-items: center;
 }
 
 .accordionButton span:first-child {
   position: relative;
-  padding-left: 24px;
+  padding-left: 32px;
+  display: flex;
+  align-items: center;
 }
 
+/* Ícone do accordion */
 .accordionButton span:first-child::before {
-  content: "✔";
+  content: "";
   position: absolute;
   left: 0;
-  top: 0;
-  color: #0c0c0c; 
-  font-size: 14px;
-  font-weight: bold;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="black"/><path d="M7 12L10 15L17 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 }
 
-.icon {
-  font-size: 1.4rem;
+/* Caret/seta */
+.caret {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  transition: transform 0.25s ease;
+  background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M2 4L6 8L10 4" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-/* CLOSED */
-.accordionContent {
-  max-height: 0;
+.rotate {
+  transform: rotate(180deg);
+}
+
+/* Conteúdo do accordion */
+.accordionContent,
+.accordionContentOpen {
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
 
-/* OPEN */
+.accordionContent {
+  max-height: 0;
+}
+
 .accordionContentOpen {
   max-height: 200px;
-  transition: max-height 0.3s ease;
 }
 
 .accordionContentOpen p,
 .accordionContent p {
   margin: 0;
-  padding: 0.5rem 0 1rem;
-  color: #6b7280;
-}
-.faqLabel {
-  display: inline-block;
-  font-size: 0.75rem; 
-  font-weight: 600;
-  color: #416D97; 
-  margin-bottom: 0.5rem; 
-  text-transform: uppercase;
-  letter-spacing: 1px; 
+  padding: 0.5rem 0 1rem 32px;
+  color: #6b6b6b;
 }
 
-/* lado direito */
+/* Lado direito */
 .right {
-  display: flex;           
-  flex-direction: column;  
-  gap: 1.5rem;             
-  padding: 2rem;          
+  gap: 1.5rem;
 }
-
 
 .topImage img {
   width: 100%;
@@ -104,17 +118,29 @@
   padding: 2rem;
 }
 
-
-
-.titleRight {
-  font-size: 2.3rem;
-  font-weight: 800;
-  color: #050505;  
-  margin-bottom: 1rem;
-  text-align: left;
-  padding-top: 150px;
+/* Tipografia compartilhada */
+.sectionTitle,
+.whatsappButton,
+.p {
+  font-family: 'Inter', sans-serif;
 }
-.button {
+
+.sectionMarker {
+  position: relative;
+  display: inline-block;
+  margin-top: 40px;
+}
+
+.sectionTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #262626;
+  margin: -20px 0 0 0;
+  text-align: left;
+}
+
+/* Botão */
+.whatsappButton {
   padding: 12px 26px;
   border-radius: 20px;
   background-color: #0c4a6e;
@@ -122,9 +148,20 @@
   color: #fff;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  letter-spacing: 0.8px;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
 }
 
-.button:hover {
+.whatsappButton:hover {
   background: #0a3a57;
+  transform: translateY(-2px);
+}
+
+/* Parágrafo */
+.p {
+  font-weight: 400;
 }

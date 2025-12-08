@@ -1,127 +1,147 @@
 .section {
-  padding: 120px 0;
-  position: relative;
-}
-
- /*  configurando o layout */
-.container {
-  max-width: 1248px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  align-items: center;
-  gap: 40px;
-  position: relative;
-}
-
-
-.leftWrapper {
   position: relative;
   width: 100%;
-  height: 500px;
+  overflow: hidden;
+  min-height: 320px; /* Reduzido 20%: 400px → 320px */
+  padding: 64px 0; /* Reduzido 20%: 80px → 64px */
+  background: white;
 }
 
-/*  atributos da  figura azul criada */
-.blueShape {
-  position: absolute;
-  top: 0;
-  left: -310px;
-  width: 600px;
-  height: 100%;
-  background: #44698a;
-  clip-path:  polygon(
-  0% 0%,      /* canto superior esquerdo */
-  100% 0%,    /* canto superior direito */
-  100% 20%,   /* começo da diagonal superior */
-  70% 50%,    /* ponto interno central */
-  100% 80%,   /* começo da diagonal inferior */
-  100% 100%,  /* canto inferior direito */
-  0% 100%     /* canto inferior esquerdo */
-);
 
+
+/* Forma azul no lado esquerdo (apenas desktop) */
+.blueBackground {
+  display: none;
+}
+
+/* Emblema decorativo */
+.emblema1 {
+  display: none;
+}
+
+.emblema2 {
+  display: none;
+  max-width:120px;
+  padding-top:80px;
+}
+
+
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+
+/* Coluna da esquerda */
+.leftColumn {
+  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  padding-bottom: 30px;
+  padding: 0.8rem; /* Reduzido: 1rem → 0.8rem */
+  margin-bottom: 1.6rem; /* Reduzido: 2rem → 1.6rem */
 }
 
-
-.mandala {
-  width: 220px;
-  opacity: 0.25;
-}
 
 
 .imageWrapper {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-27%, -50%);
-  overflow: visible;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2.0px solid white;  /* Reduzido: 3.2px → 3px */
+  box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.2); /* Sombra mais leve */
+  width: 100%;
+  max-width: 420px; /* Reduzido: 205px → 180px (12% a mais) */
+  max-height: 420px; /* Reduzido: 205px → 180px */
 }
 
 .profileImage {
-  width: 380px;
-  height: 380px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 50%;
-  border: 8px solid white;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+  aspect-ratio: 1/1;
 }
 
-
-.label {
-  color: #44698a;
-  font-size: 0.75rem;
-  font-weight: 600;
+/* Coluna da direita */
+.rightColumn {
+  width: 100%;
+  padding: 0.8rem; /* Reduzido: 1rem → 0.8rem */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
 }
-
+.contentWrapper {
+  width: 100%;
+}
+.sectionMarker{
+  color: #416d97;
+  font-size: 0.7rem; /* Reduzido: 0.875rem → 0.7rem */
+  font-weight: 500;
+  margin-bottom: 0.6rem; /* Reduzido: 0.75rem → 0.6rem */
+  display: block;
+  font-family: 'Inter', sans-serif;
+}
 .title {
-  font-size: 2.1rem;
-  font-weight: 600;
-  margin: 12px 0 20px 0;
+  font-size: 1.8rem; /* Reduzido: 2.25rem → 1.8rem */
+  font-weight: 700;
+  color: #262626;
+  margin-bottom: 0.8rem; /* Reduzido: 1rem → 0.8rem */
+  font-family: 'Inter', sans-serif;
 }
-
 .description {
-  max-width: 520px;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin-bottom: 22px;
+  font-size: 0.9rem; /* Reduzido: 1.125rem → 0.9rem */
+  font-weight: 400;
+  color: #262626;
+  line-height: 1.75;
+  margin-bottom: 1.2rem; /* Reduzido: 1.5rem → 1.2rem */
+  font-family: 'Inter', sans-serif;
 }
-.descriptionWrapper {
-  max-width: 380px; 
+/* Seção das fundadoras */
+.foundersSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem; /* Reduzido: 1rem → 0.8rem */
+  margin-bottom: 1.2rem; /* Reduzido: 1.5rem → 1.2rem */
 }
-
-
-
 .person {
   display: flex;
-  align-items: center;  
-  justify-content: center; 
-  gap: 20px;             
-  margin-bottom: 28px;
+  flex-direction: column;
+  gap: 0.6rem; /* Reduzido: 0.75rem → 0.6rem */
+  align-items: center;
 }
-
-
-.personImg {
-  width: 60px;
-  height: 60px;
-  border-radius: 6px;
-  object-fit: cover;
+.personFrame {
+  width: 77px; /* Reduzido 20%: 96px → 77px */
+  height: 77px; /* Reduzido 20%: 96px → 77px */
+  border-radius: 0.4rem; /* Reduzido: 0.5rem → 0.4rem */
+  overflow: hidden;
+  background: #f3f4f6;
 }
 
 .personName {
-  font-size: 1rem;
+  font-size: 0.8rem; /* Reduzido: 1rem → 0.8rem */
   font-weight: 700;
-  margin-bottom: 4px;
+  color: #262626;
+  margin-bottom: 0.4rem; /* Reduzido: 0.5rem → 0.4rem */
+  font-family: 'Solway', sans-serif;
 }
 
 .personBio {
-  font-size: .85rem;
-  line-height: 1.45;
+  font-size: 0.9rem; /* Reduzido: 1.125rem → 0.9rem */
+  font-weight: 400;
+  color: #262626;
+  line-height: 1.75;
+  font-family: 'Inter', sans-serif;
 }
 
-.button {
+/* button */
+.whatsappButton{
   padding: 12px 26px;
   border-radius: 20px;
   background-color: #0c4a6e;
@@ -131,7 +151,74 @@
   cursor: pointer;
   transition: 0.3s;
 }
-
 .button:hover {
   background: #0a3a57;
+}
+.personImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.personInfo {
+  flex: 1;
+  text-align: center;
+}
+.personImageContainer {
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+  .emblema1 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .emblema2 {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 56px; /* Reduzido 20%: 70px → 56px */
+  }
+
+/* A partir de 768px (tablet/desktop) */
+@media (min-width: 768px) {
+
+  .container {
+    flex-direction: row;       /* duas colunas */
+    align-items: center;
+  }
+
+  .leftColumn {
+    width: 50%;
+    margin-bottom: 0;          /* tira espaçamento mobile */
+  }
+
+  .rightColumn {
+    width: 50%;
+  }
+
+  /* Elementos decorativos só no desktop */
+  .blueBackground {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #0c4a6e;
+    border-bottom-right-radius: 120px;
+    z-index: 1;
+  }
+
+  .emblema1 {
+    display: block;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    width: 100px;
+    z-index: 2;
+  }
+
+  .emblema2 {
+    display: block;
+  }
 }

@@ -34,6 +34,13 @@ body {
   display: flex;
 }
 
+.column li a {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+
 .items-center {
   align-items: center;
 }
@@ -85,3 +92,6 @@ body {
 .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
 .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
 .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Solway:wght@300;400;500;700;800&display=swap');

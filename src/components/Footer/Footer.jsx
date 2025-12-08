@@ -23,15 +23,16 @@ const Footer = () => {
         {/* menu institucional */}
         <div className={styles.column}>
           <h3>Institucional</h3>
-          <ul>
-            <li>⚪Home</li>
-            <li>⚪Sobre</li>
-            <li>⚪Serviços</li>
-            <li>⚪Equipe</li>
-            <li>⚪Espaço</li>
-            <li>⚪FAQ</li>
-            <li>⚪Convênios</li>
-          </ul>
+         <ul>
+  <li><a href="#inicio">Home</a></li>
+  <li><a href="#sobre">Sobre</a></li>
+  <li><a href="#servicos">Serviços</a></li>
+  <li><a href="#equipe">Equipe</a></li>
+  <li><a href="#espaco">Espaço</a></li>
+  <li><a href="#faq">FAQ</a></li>
+  <li><a href="#">Convênios</a></li>
+</ul>
+
         </div>
 
         
@@ -73,7 +74,7 @@ const Footer = () => {
       </div>
 
       {/* copyright */}
-      <div className={styles.bottom}>
+      <div className={styles.copy}>
         © 2025 GrowBusiness. Todos os direitos reservados
       </div>
     </footer>

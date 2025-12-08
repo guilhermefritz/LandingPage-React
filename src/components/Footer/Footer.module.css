@@ -1,8 +1,8 @@
 .footer {
-  background: #242323;
-  padding: 60px 0 0 0;
+  background: #1f1d1d;
+  padding: 60px 0 0;
   color: #e5e5e5;
-  position:relative;
+  position: relative;
 }
 
 .container {
@@ -13,11 +13,19 @@
   gap: 40px;
 }
 
+/* Colunas e tipografia */
 .column h3 {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 14px;
   color: #ffffff;
+  font-family: 'Solway', serif;
+}
+
+.column p,
+.column li,
+.copy {
+  font-family: 'Inter', sans-serif;
 }
 
 .column p {
@@ -26,34 +34,43 @@
   color: #cfcfcf;
   max-width: 260px;
 }
-.column:first-child {
-  margin-left: 100px; /* ajusta conforme quiser */
-}
 
+.column:first-child {
+  margin-left: 100px;
+}
 
 .logo {
   height: 60px;
   margin-bottom: 14px;
 }
 
+/* Listas e links */
 .column ul {
   list-style: none;
   padding: 0;
 }
 
 .column li {
-  margin-bottom: 10px;
-  font-size: 0.95rem;
-  color: #cfcfcf;
+  margin-bottom: 6px;
   cursor: pointer;
-   list-style: none; 
 }
 
-.column li:hover {
+.column li a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
   color: #ffffff;
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
 }
 
-/* SOCIAL ICONS */
+.column li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffd700;
+}
+
+/* Ícones sociais */
 .social {
   display: flex;
   gap: 12px;
@@ -62,7 +79,6 @@
 .social a {
   width: 36px;
   height: 36px;
-  border: 1px solid #555;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -77,13 +93,13 @@
   color: #fff;
 }
 
-/* COPYRIGHT */
-.bottom {
+/* Copyright */
+.copy {
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 1.10rem;
   background-color: #3a3838;
   color: #ece6e6;
+  padding: 10px 0;
   border-top: 1px solid #020202;
-  margin-top:4px;
-  
+  margin-top: 4px;
 }
