@@ -118,6 +118,12 @@
   padding: 2rem;
 }
 
+.whatsappButton{
+  
+  font-weight: 600;
+}
+
+
 /* Tipografia compartilhada */
 .sectionTitle,
 .whatsappButton,
@@ -133,21 +139,7 @@
 
 
 /* Botão */
-.whatsappButton {
-  padding: 12px 26px;
-  border-radius: 20px;
-  background-color: #0c4a6e;
-  border: none;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  letter-spacing: 0.8px;
-  transition: all 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  width: fit-content;
-}
+
 
 .whatsappButton:hover {
   background: #0a3a57;

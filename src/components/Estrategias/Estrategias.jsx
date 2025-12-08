@@ -41,7 +41,7 @@ const Estrategias = () => {
       <div className={styles.cardsWrapper}>
         {servicos.map((s, i) => (
           <div className={styles.card} key={i}>
-            // Estrutura dos cards de serviços
+            
 {/* Cards com forma decorativa no canto e numeração sequencial */}
             <div className={styles.shape}></div>
 
