@@ -90,10 +90,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -15px;
-  margin-right: -2px;
+  margin-top: -30px; /* Mantém a subida */
+  margin-right: -6px; /* 1px para a DIREITA (negativo move para direita) */
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .iconBox img {
   width: 32px;
   height: 32px;

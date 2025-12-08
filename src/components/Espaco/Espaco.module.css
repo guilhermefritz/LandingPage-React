@@ -13,24 +13,16 @@
   align-items: center;
 }
 
-/* Tipografia compartilhada */
-.sectionMarker,
-.sectionTitle,
-.textBox p,
-.whatsappButton {
-  font-family: 'Inter', sans-serif;
-}
-
 /* TEXTO */
 .textBox {
   display: flex;
   flex-direction: column;
 }
 
-.sectionMarker {
+.label {
   font-size: 0.7rem;
   font-weight: 500;
-  color: rgb(17, 19, 109);
+  color: #44698a;
   display: inline-flex;
   align-items: flex-start;
   gap: 4px;
@@ -39,12 +31,13 @@
   letter-spacing: 0.5px;
 }
 
-.sectionTitle {
+.title {
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 20px;
   max-width: 490px;
+  font-family: 'Inter', sans-serif;
   color: #262626;
 }
 
@@ -54,10 +47,11 @@
   margin-bottom: 15px;
   max-width: 480px;
   color: #000000;
+  font-family: 'Inter', sans-serif;
 }
 
 /* BOTÃO */
-.whatsappButton {
+.button {
   padding: 12px 26px;
   border-radius: 20px;
   background-color: #0c4a6e;
@@ -66,6 +60,7 @@
   font-weight: 600;
   cursor: pointer;
   letter-spacing: 0.8px;
+  font-family: 'Inter', sans-serif;
   transition: all 0.3s;
   display: inline-flex;
   align-items: center;
@@ -73,12 +68,12 @@
   width: fit-content;
 }
 
-.whatsappButton:hover {
+.button:hover {
   background: #0a3a57;
   transform: translateY(-2px);
 }
 
-.whatsappButton i {
+.button i {
   font-size: 1.2rem;
 }
 
@@ -90,18 +85,16 @@
 }
 
 /* Linhas da galeria */
-.galleryFirstRow,
-.gallerySecondRow {
+.galleryFirstRow {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
-.galleryFirstRow {
-  grid-template-columns: repeat(3, 1fr);
-}
-
 .gallerySecondRow {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 
 /* Caixa da foto */
@@ -149,6 +142,48 @@
 .photoBox img[src=""]::after {
   content: 'Imagem não disponível';
   opacity: 1;
+}
+
+/* RESPONSIVO */
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .galleryFirstRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .gallerySecondRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .galleryFirstRow,
+  .gallerySecondRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .container {
+    padding: 0 16px;
+    gap: 30px;
+  }
 }
 
 /* RESPONSIVO */

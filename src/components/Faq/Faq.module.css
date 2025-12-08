@@ -1,7 +1,7 @@
-.container {
+.faq-responsivo .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f5f5f5;
   align-items: start;
 }
@@ -131,13 +131,6 @@
   margin-top: 40px;
 }
 
-.sectionTitle {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #262626;
-  margin: -20px 0 0 0;
-  text-align: left;
-}
 
 /* Botão */
 .whatsappButton {
@@ -164,4 +157,171 @@
 /* Parágrafo */
 .p {
   font-weight: 400;
+}
+
+/* ================= RESPONSIVE STYLES ================= */
+
+/* Tablet Styles (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  .faq-responsivo .container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .left, .right {
+    padding: 1.5rem;
+  }
+  
+  .left {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+ 
+  .right {
+    order: -1; /* Move right column to top on mobile */
+  }
+  
+  .topImage img {
+    max-height: 400px;
+  }
+}
+
+/* Mobile Styles (up to 768px) */
+@media screen and (max-width: 768px) {
+  .faq-responsivo .container {
+    min-height: auto;
+    padding: 1rem;
+  }
+  
+  .left, .right {
+    padding: 1rem;
+  }
+  
+  .left {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .accordionItem {
+    padding: 0.7rem 0 0.7rem 35px;
+  }
+  
+  .accordionButton {
+    padding: 0.8rem 0;
+    font-size: 0.85rem;
+  }
+  
+  .accordionButton span:first-child::before {
+    width: 20px;
+    height: 20px;
+  }
+  
+ 
+  
+  .sectionMarker {
+    margin-top: 20px;
+  }
+  
+  .bottomText {
+    padding: 1.5rem;
+  }
+  
+  .whatsappButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .accordionContentOpen p,
+  .accordionContent p {
+    padding: 0.5rem 0 1rem 30px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small Mobile Styles (up to 480px) */
+@media screen and (max-width: 480px) {
+  .faq-responsivo .container {
+    padding: 0.5rem;
+  }
+  
+  .left, .right {
+    padding: 0.75rem;
+  }
+  
+  .left {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+ 
+  
+  .accordionItem {
+    padding: 0.6rem 0 0.6rem 30px;
+  }
+  
+  .accordionButton {
+    font-size: 0.8rem;
+    padding: 0.7rem 0;
+  }
+  
+  .accordionButton span:first-child::before {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .sectionMarker {
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .accordionContentOpen {
+    max-height: 300px; /* Allow more height for mobile content */
+  }
+  
+  .bottomText {
+    padding: 1rem;
+  }
+  
+  .p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Large Desktop Styles (min 1440px) */
+@media screen and (min-width: 1440px) {
+  .faq-responsivo .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .titleRight {
+    font-size: 2.2rem;
+  }
+  
+  .accordionButton {
+    font-size: 1rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .faq-responsivo .container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  
+  .whatsappButton {
+    display: none;
+  }
+  
+  .right {
+    display: none;
+  }
+  
+  .accordionContentOpen {
+    max-height: none !important;
+  }
 }

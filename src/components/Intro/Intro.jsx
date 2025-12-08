@@ -45,7 +45,6 @@ import styles from "./Intro.module.css";
       {/* fundo preto */}
       <div className={styles.blackBackground}></div>
 
-      // Card sobreposto com estatísticas
 {/* Card flutuante com dados institucionais - posicionamento absoluto */}
       <div className={styles.card}>
         <div className={styles.item}>
