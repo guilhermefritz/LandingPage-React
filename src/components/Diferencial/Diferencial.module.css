@@ -1,12 +1,4 @@
-/* Estilos compartilhados */
-.container,
-.left,
-.right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
+/*  CONTAINER */
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -17,19 +9,16 @@
   overflow: hidden;
 }
 
-/* Lado esquerdo */
-.left {
-  max-width: 500px;
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Tipografia */
-.sectionMarker,
-.sectionTitle,
-.text,
-.cardTitle,
-.cardText {
-  font-family: 'Inter', sans-serif;
-  color: #1a1a1a;
+/* LADO ESQUERDO  */
+.left {
+  max-width: 500px;
 }
 
 .sectionMarker {
@@ -39,6 +28,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .sectionTitle {
@@ -55,14 +45,6 @@
   margin-bottom: 40px;
 }
 
-.cardText {
-  font-size: 15px;
-  color: #666;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* Botão */
 .whatsappButton {
   padding: 12px 26px;
   border-radius: 20px;
@@ -76,6 +58,7 @@
   align-items: center;
   gap: 10px;
   width: fit-content;
+  transition: all 0.3s;
 }
 
 .whatsappButton:hover {
@@ -86,7 +69,7 @@
   font-size: 1.2rem;
 }
 
-/* Lado direito */
+/*  lado direito */
 .right {
   background-color: #f5f2ef;
   padding: 60px 40px;
@@ -116,7 +99,6 @@
   overflow: hidden;
   width: 100%;
   max-width: 500px;
-  margin: 0 auto;
 }
 
 .card::before {
@@ -135,7 +117,6 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* Ícone */
 .icon {
   background: #020202;
   width: 50px;
@@ -155,7 +136,6 @@
   filter: brightness(0) invert(1);
 }
 
-/* Conteúdo do card */
 .cardContent {
   flex: 1;
   text-align: center;
@@ -169,7 +149,15 @@
   font-family: 'Solway', sans-serif;
 }
 
-/* Responsivo */
+.cardText {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ================== RESPONSIVO ================== */
+
+
 @media (max-width: 1024px) {
   .container {
     grid-template-columns: 1fr;
@@ -191,10 +179,12 @@
   }
 }
 
+/* Tablets médios / 
 @media (max-width: 768px) {
   .container {
     padding: 40px 20px;
   }
+ 
   
   .sectionTitle {
     font-size: 28px;
@@ -203,10 +193,18 @@
   .card {
     flex-direction: column;
     text-align: center;
+    max-width: 400px; 
   }
   
   .icon {
     margin: 0 auto 15px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .iconImage {
+    width: 20px;
+    height: 20px;
   }
   
   .card::before {
@@ -214,6 +212,65 @@
     width: 100%;
     height: 40px;
     clip-path: polygon(0 0, 100% 0, 100% 48%, 50% 100%, 0 48%);
-    top: 0;
+  }}
+
+/* Mobile / iPhone */
+
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 15px;
+    gap: 20px;
+  }
+
+  .sectionTitle {
+    font-size: 24px;
+  }
+  
+  .card {
+      position: relative;
+  }
+
+  .card::before {
+    left: 0;
+    width: 100%;
+    height: 40px;
+    clip-path: polygon(0 0, 100% 0, 100% 48%, 50% 100%, 0 48%);
+  }
+
+  .icon {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    top: 25px;  
+    margin: 0 auto 20px;
+  }
+
+  .iconImage {
+    width: 18px;
+    height: 18px;
+  }
+
+  .cardContent {
+    text-align: center;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .cardText {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .whatsappButton {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }

@@ -7,7 +7,7 @@ const Sobre = () => {
       {/* Forma azul no lado esquerdo  */}
       <div className={styles.blueBackground}></div>
       
-      {/* Emblemas decorativos (apenas desktop) */}
+     
       <div className={styles.emblema1}>
         <img src="/img-sobre/icone-estatua.png" alt="Emblema do Instituto Attuare" />
       </div>

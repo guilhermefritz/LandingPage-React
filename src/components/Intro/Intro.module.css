@@ -1,10 +1,12 @@
-/* -------------------- INTRO -------------------- */
+/* ================== INTRO ================== */
 .intro {
   background: #F5F2EF;
   padding: 80px 0 120px;
+  position: relative;
+  overflow: visible;
 }
 
-/* Layout mobile: coluna */
+/* ================== CONTAINER ================== */
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -13,24 +15,21 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  position: relative;
+  z-index: 1; /* acima da forma azul */
 }
 
-/* -------------------- TIPOGRAFIA -------------------- */
-.text h1,
-.text p,
-.item p {
+/* ================== TIPOGRAFIA ================== */
+.text, .item {
   font-family: 'Inter', sans-serif;
-}
-
-.text {
   text-align: center;
 }
 
 .text h1 {
   font-size: 30px;
-  margin-bottom: 18px;
   line-height: 1.25;
   font-weight: 700;
+  margin-bottom: 18px;
   max-width: 480px;
 }
 
@@ -41,7 +40,7 @@
   max-width: 380px;
 }
 
-/* -------------------- BOTÕES -------------------- */
+/* ================== BOTÕES ================== */
 .whatsappButton {
   border: none;
   border-radius: 50px;
@@ -49,39 +48,72 @@
   cursor: pointer;
   transition: 0.3s;
   color: #fff;
-  padding: 14px 32px; /* valor final desejado */
-  background: #1f4e8a; /* valor final desejado */
+  padding: 14px 32px;
+  background: #1f4e8a;
 }
+
 .whatsappButton:hover {
   background: #0a3a57;
 }
 
-/* -------------------- IMAGEM -------------------- */
+/* ================== IMAGEM ================== */
 .imageWrapper {
   position: relative;
   width: 100%;
   max-width: 350px;
+  z-index: 2; /* acima da forma azul */
 }
 
 .image {
   width: 100%;
   border-radius: 12px;
-  z-index: 2;
+  display: block;
   position: relative;
 }
 
+/* ================== FORMA AZUL ================== */
 .blueSquare {
-  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #416D97;
+  border-radius: 12px;
+  z-index: -1; /* atrás da imagem e do card */
+  transform: translateX(50px); /* desloca horizontal */
+  display: block; /* garante que apareça em todas as telas */
 }
 
-/* -------------------- FUNDO PRETO -------------------- */
+/* Ajustes responsivos */
+@media (max-width: 1023px) { /* tablet/iPad */
+  .blueSquare {
+    top: 30px;
+    width: 55%;
+    height: 100%;
+    transform: translateX(30px);
+  }
+}
+
+@media (max-width: 767px) { /* iPhone/mobile */
+  .blueSquare {
+    top: 50px; /* aumenta um pouco para alinhar melhor com o card */
+    right: -10px; /* pequeno ajuste para parecer igual ao iPad */
+    width: 55%; /* mantém largura proporcional */
+    height: 220px; /* ajusta para aproximar a altura do card */
+    transform: none; /* remove transform que bagunça no mobile */
+    border-radius: 12px;
+  }
+}
+
+/* ================== FUNDO PRETO ================== */
 .blackBackground {
   background: #101010;
   height: 200px;
   width: 100%;
 }
 
-/* -------------------- CARD -------------------- */
+/* ================== CARD ================== */
 .card {
   width: 90%;
   max-width: 1100px;
@@ -95,11 +127,13 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  padding:25px;
   margin-top: -180px;
-  box-shadow: 0 4px 40px rgba(0, 0, 0, .12);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.12);
+  z-index: 2; /* acima da forma azul */
 }
 
-/* -------------------- ITENS DO CARD -------------------- */
+/* ================== ITENS DO CARD ================== */
 .item {
   display: flex;
   flex-direction: column;
@@ -121,20 +155,117 @@
 }
 
 .item p {
-  color: #444;
   font-size: 12px;
   font-weight: 400;
+  color: #444;
 }
 
-/* ==========================================================
-   RESPONSIVO DESKTOP (tablet e desktop)
-   ========================================================== */
-@media (min-width: 768px) {
+/* ================== RESPONSIVO ================== */
+/* ================== INTRO ================== */
+.intro {
+  background: #F5F2EF;
+  padding: 80px 0 120px;
+  position: relative;
+  overflow: visible;
+}
 
+/* ================== CONTAINER ================== */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 1; /* acima da forma azul */
+}
+
+/* ================== TIPOGRAFIA ================== */
+.text, .item {
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+
+.text h1 {
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 700;
+  margin-bottom: 18px;
+  max-width: 480px;
+}
+
+.text p {
+  font-size: 15px;
+  margin-bottom: 30px;
+  color: #444;
+  max-width: 380px;
+}
+
+/* ================== BOTÕES ================== */
+.whatsappButton {
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #fff;
+  padding: 14px 32px;
+  background: #1f4e8a;
+}
+
+.whatsappButton:hover {
+  background: #0a3a57;
+}
+
+/* ================== IMAGEM ================== */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  z-index: 2; /* acima da forma azul */
+}
+
+.image {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  position: relative;
+}
+
+/* ================== FORMA AZUL ================== */
+.blueSquare {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #416D97;
+  border-radius: 12px;
+  z-index: -1; /* atrás da imagem e do card */
+  transform: translateX(50px); /* desloca horizontal */
+  display: block; /* garante que apareça em todas as telas */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1023px) { /* tablet/iPad */
+  .blueSquare {
+    top: 30px;
+    width: 55%;
+    height: 100%;
+    transform: translateX(30px);
+  }
+}
+
+
+/* ================== RESPONSIVO ================== */
+@media (min-width: 768px) {
   .container {
     flex-direction: row;
     justify-content: center;
     gap: 60px;
+    align-items: center;
   }
 
   .text {
@@ -149,24 +280,12 @@
     max-width: 400px;
   }
 
-  .blueSquare {
-    display: block;
-    width: 55%;
-    height: 100%;
-    background: #416D97;
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    border-radius: 12px;
-    z-index: 1;
-  }
-
   .card {
     flex-direction: row;
     justify-content: space-between;
     gap: 0;
     padding: 35px 60px;
-    margin-top: -240px;
+    margin-top: -200px;
   }
 
   .item img {
@@ -182,11 +301,87 @@
   }
 }
 
-/* ==========================================================
-   MONITORES GRANDES
-   ========================================================== */
 @media (min-width: 1024px) {
   .container {
     gap: 80px;
   }
 }
+/* ================== iPhone / Mobile ================== */
+@media (max-width: 767px) {
+  /* Ajuste da forma azul */
+  .blueSquare {
+    top: 50px;
+    right: -10px;
+    width: 55%;
+    height: 220px;
+    transform: none;
+    border-radius: 12px;
+  }
+
+  /* Container centralizado e com menos gap */
+  .container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 16px;
+  }
+
+  /* Texto */
+  .text {
+    text-align: center;
+  }
+
+  .text h1 {
+    font-size: 24px;
+    line-height: 1.3;
+    max-width: 90%;
+    margin-bottom: 16px;
+  }
+
+  .text p {
+    font-size: 14px;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  /* Imagem */
+  .imageWrapper {
+    max-width: 300px;
+  }
+
+  /* Card */
+  .card {
+    width: 90%;           /* ocupa mais largura da tela */
+    height: 180px;        /* menor altura, para ficar “deitado” */
+    flex-direction: row;   /* muda para horizontal */
+    gap: 16px;             /* espaço entre itens */
+    padding: 18px;
+    margin-top: -190px;    /* ajusta para subir */
+    align-items: center;  /* joga mais pra cima */
+  }
+
+  /* Itens do card */
+ /* Ajuste dos itens internos para caber na horizontal */
+  .item {
+    flex: 1;               /* cada item ocupa espaço proporcional */
+    text-align: center;
+  }
+
+  .item img {
+    width: 32px;
+  }
+
+  .item h3 {
+    font-size: 16px;
+  }
+
+  .item p {
+    font-size: 11px;
+  }
+
+  /* Botão WhatsApp */
+  .whatsappButton {
+    padding: 12px 28px;
+    font-size: 14px;
+  }
+}
+

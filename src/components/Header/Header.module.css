@@ -1,24 +1,19 @@
-/* Header.module.css */
-
+/* ================== HEADER ================== */
 .header {
   position: sticky;
   top: 0;
   z-index: 1000;
   background: white;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-
-  /* 🟣 novo estilo circular */
   margin: 10px auto;
-  width: calc(100% - 40px);
+  width: 70%;
   padding: 15px 30px;
-  border-radius: 50px;
+  border-radius: 20px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
-
-
-.header .container {
+.container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -26,7 +21,7 @@
   justify-content: space-between;
 }
 
-/* Logo */
+/* ================== LOGO ================== */
 .logoContainer {
   flex: 0 0 auto;
 }
@@ -46,11 +41,26 @@
   opacity: 0.9;
 }
 
-/* Navegação */
+/* ================== NAVEGAÇÃO ================== */
 .navigation {
   display: flex;
   align-items: center;
   gap: 40px;
+}
+
+.navigation.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  width: 90%;
+  border-radius: 15px;
+  padding: 15px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 999;
 }
 
 .navMenu {
@@ -63,6 +73,8 @@
   margin: 0;
   padding: 0;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .navItem {
@@ -102,17 +114,19 @@
   background-color: #007bff;
 }
 
-/* Contato WhatsApp */
+/* ================== CONTATO WHATSAPP ================== */
 .contact {
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .whatsappLink {
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: #25D366;
+  background-color: #1f386e;
   padding: 10px 15px;
   border-radius: 8px;
   text-decoration: none;
@@ -120,7 +134,7 @@
 }
 
 .whatsappLink:hover {
-  background-color: #128C7E;
+  background-color: #3468da;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
 }
@@ -151,7 +165,7 @@
   line-height: 1.2;
 }
 
-/* Menu Mobile */
+/* ================== MENU HAMBURGER ================== */
 .mobileMenu {
   display: none;
 }
@@ -165,28 +179,72 @@
   color: #333;
 }
 
-/* Responsividade */
-@media (max-width: 1024px) {
+/* ================== RESPONSIVIDADE ================== */
+
+/* iPad / Tablets */
+@media (max-width: 1024px) and (min-width: 769px) {
   .navigation {
+    display: flex !important; /* sempre mostra a lista horizontal */
     gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  
+
   .navLink {
     font-size: 13px;
     padding: 6px 10px;
   }
+
+  .whatsappLink {
+    padding: 8px 12px;
+    gap: 6px;
+  }
+
+  .whatsappIcon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mobileMenu {
+    display: none; /* esconde hamburger no iPad */
+  }
 }
 
+/* iPhone / Mobile */
 @media (max-width: 768px) {
   .navigation {
     display: none;
   }
-  
+
+  .navigation.open {
+    display: flex;
+  }
+
+  .navList {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
   .mobileMenu {
     display: block;
   }
-  
+
   .container {
     padding: 0 15px;
+  }
+
+  .contact {
+    margin-top: 10px;
+  }
+
+  .whatsappLink {
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .whatsappIcon img {
+    width: 30px;
+    height: 30px;
   }
 }

@@ -5,7 +5,7 @@
   padding: 60px 20px;
 }
 
-/* Tipografia comum */
+/* Tipografia */
 .sectionTitle,
 .sectionMarker,
 .info h3,
@@ -16,7 +16,6 @@
   font-weight: 600;
 }
 
-/* Títulos e marcadores de seção */
 .sectionTitle {
   font-size: 1.8rem;
   font-weight: 800;
@@ -55,7 +54,6 @@
   height: 150px;
   background: #234c73;
   clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%);
-  overflow: visible;
 }
 
 .fotoWrapper {
@@ -119,8 +117,80 @@
   color: #fff;
   cursor: pointer;
   letter-spacing: 0.8px;
+  transition: all 0.3s;
 }
 
 .whatsappButton:hover {
   background: #0a3a57;
+}
+
+/* Responsividade */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 40px 15px;
+  }
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+  .card {
+    min-height: 500px;
+  }
+  .fotoWrapper {
+    width: 180px;
+    height: 180px;
+    top: 70px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+  .card {
+    min-height: 450px;
+  }
+  .fotoWrapper {
+    width: 150px;
+    height: 150px;
+    top: 60px;
+  }
+  .info h3,
+  .registro,
+  .titulo,
+  .desc {
+    font-size: 14px;
+  }
+  .whatsappButton {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 30px 10px;
+  }
+  .sectionTitle {
+    font-size: 1.2rem;
+  }
+  .card {
+    min-height: 400px;
+  }
+  .fotoWrapper {
+    width: 130px;
+    height: 130px;
+    top: 50px;
+  }
+  .info h3,
+  .registro,
+  .titulo,
+  .desc {
+    font-size: 13px;
+  }
 }

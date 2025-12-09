@@ -1,71 +1,81 @@
-{/* importando o modulo correto*/}
-import styles from "./Servicos.module.css"; 
-import React, { useState } from 'react';
+import React from "react";
+import styles from "./Servicos.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 
+import "swiper/css";
+import "swiper/css/pagination";
+
+const servicos = [
+  {
+    numero: "01",
+    titulo: "Avaliação Neuropsicológica",
+    desc: "Diagnóstico detalhado para identificar dificuldades cognitivas e orientar tratamentos.",
+    icon: "/img-servicos/icone-cerebro.png",
+    imagem: "/img-servicos/mulheres.png",
+  },
+  {
+    numero: "02",
+    titulo: "Psicoterapia Adulto",
+    desc: "Terapia individual para superar bloqueios emocionais e promover crescimento pessoal",
+    icon: "/img-servicos/icone-coracao.png",
+    imagem: "/img-servicos/prancheta.png",
+  },
+  {
+    numero: "03",
+    titulo: "Nutrição Clínica e Esportiva",
+    desc: "Planos personalizados para melhorar saúde, desempenho físico e alcançar metas esportivas.",
+    icon: "/img-servicos/icone-pessoa.png",
+    imagem: "/img-servicos/medico.png",
+  },
+];
 
 const Servicos = () => {
-  {/* forma de lista*/}
-  const servicos = [
-    {
-      numero: "01",
-      titulo: "Avaliação Neuropsicológica",
-      desc: "Diagnístico detalhado para identificar dificuldades cognitivas e orientar tratamentos.",
-      icon: "/img-servicos/icone-cerebro.png",
-      imagem: "/img-servicos/mulheres.png"
-    },
-    {
-      numero: "02",
-      titulo: "Psicoterapia Adulto",
-      desc: "Terapia individual para superar bloqueios emocionais e promover crescimento pessoal",
-      icon: "/img-servicos/icone-coracao.png",
-      imagem: "/img-servicos/prancheta.png"
-    },
-    {
-      numero: "03",
-      titulo: "Nutrição Clínica e Esportiva",
-      desc: "Planos personalizados para melhorar saúde, desempenho físico e alcançar metas esportivas.",
-      icon: "/img-servicos/icone-pessoa.png",
-      imagem: "/img-servicos/medico.png"
-    },
-  ];
-
   return (
-    <div id="servicos" className={styles.container}>
-      <span className={styles.sectionMarker}> ▆ NOSSOS SERVIÇOS</span>
-
+    <section id="servicos" className={styles.container}>
+      <span className={styles.sectionMarker}>▆ NOSSOS SERVIÇOS</span>
       <h1 className={styles.sectionTitle}>
         Desenvolvemos estratégias personalizadas para promover seu Bem-estar
       </h1>
 
-      
-      <div className={styles.cardsWrapper}>
+      <Swiper
+        modules={[Pagination]}
+        pagination={{ clickable: true }}
+        slidesPerView={3}
+        spaceBetween={30}
+        breakpoints={{
+          0: { slidesPerView: 1, spaceBetween: 20 },
+          800: { slidesPerView: 2, spaceBetween: 25 },
+          1200: { slidesPerView: 3, spaceBetween: 30 },
+        }}
+      >
         {servicos.map((s, i) => (
-          <div className={styles.card} key={i}>
-            
-{/* Cards com forma decorativa no canto e numeração sequencial */}
-            <div className={styles.shape}></div>
+          <SwiperSlide key={i}>
+            <div className={styles.card}>
+              <div className={styles.shape}></div>
 
-            <div className={styles.top}>
-              <h1>{s.numero}</h1>
-              <div className={styles.iconBox}>
-                <img src={s.icon} alt="Ícone" />
+              <div className={styles.top}>
+                <h1>{s.numero}</h1>
+                <div className={styles.iconBox}>
+                  <img src={s.icon} alt="Ícone" />
+                </div>
               </div>
+
+              <h3 className={styles.titulo}>{s.titulo}</h3>
+              <p className={styles.desc}>{s.desc}</p>
+
+              <img className={styles.bottomImage} src={s.imagem} alt={s.titulo} />
             </div>
-
-            <h3 className={styles.titulo}>{s.titulo}</h3>
-            <p className={styles.desc}>{s.desc}</p>
-
-            <img className={styles.bottomImage} src={s.imagem} alt={s.titulo} />
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
 
       <div style={{ textAlign: "center", marginTop: "2rem" }}>
-            <button className={styles.whatsappButton}>
-                          <i className="fa-brands fa-whatsapp"></i> ENTRE EM CONTATO
-                        </button>
+        <button className={styles.whatsappButton}>
+          <i className="fa-brands fa-whatsapp"></i> ENTRE EM CONTATO
+        </button>
       </div>
-    </div>
+    </section>
   );
 };
 

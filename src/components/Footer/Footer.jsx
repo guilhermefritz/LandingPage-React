@@ -15,8 +15,11 @@ const Footer = () => {
         <div className={styles.column}>
           <img src="/img-footer/logoo.png" className={styles.logo} />
           <p>
-            Vamos oferecer uma explicação completa do sistema e expor os ensinamentos
-            do grande explorador da verdade…
+           Vamos oferecer uma explicação
+completa do sistema e expor os
+ensinamentos do grande explorador
+da verdade, o mestre-construtor
+porque...
           </p>
         </div>
 

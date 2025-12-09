@@ -1,125 +1,138 @@
-
+/* ================== SEÇÃO ================== */
 .section {
   position: relative;
   width: 100%;
-  overflow:visible;
-  min-height: 520px; /* Reduzido 20%: 400px → 320px */
-  padding: 64px 0; /* Reduzido 20%: 80px → 64px */
+  overflow: visible;
+  padding: 64px 16px;
   background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
-
-
-/* Forma azul no lado esquerdo (apenas desktop) */
+/* Forma azul lateral (desktop) */
 .blueBackground {
   display: none;
-   clip-path: polygon(100% 0%, 50% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
 }
 
-
-
-
-
-
-
-/* Coluna da esquerda */
-.leftColumn {
+/* ================== COLUNAS ================== */
+.leftColumn, .rightColumn {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.8rem; /* Reduzido: 1rem → 0.8rem */
-  margin-bottom: 1.6rem; /* Reduzido: 2rem → 1.6rem */
+  padding: 0.8rem;
 }
 
-
+.leftColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .imageWrapper {
   position: relative;
   border-radius: 50%;
   overflow: hidden;
-  border: 2.0px solid white;  /* Reduzido: 3.2px → 3px */
-  box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.2); /* Sombra mais leve */
-  width: 100%;
-  max-width: 420px; /* Reduzido: 205px → 180px (12% a mais) */
-  max-height: 420px; /* Reduzido: 205px → 180px */
-}
-
-.profileImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.2);
+  width: 80%;          /* ocupa 80% do container pai por padrão */
+  max-width: 550px;    /* limite em telas pequenas */
   aspect-ratio: 1/1;
+   transform: translateX(100px);   /* mantém proporção quadrada */
 }
 
-/* Coluna da direita */
+/* Imagem interna */
+.profileImage {
+  width: 100%;          /* preenche totalmente o wrapper */
+  height: 100%;         /* mantém proporção do wrapper */
+  object-fit: cover;    /* recorta se necessário, sem distorcer */
+  display: block;
+  border-radius: 50%;   /* mantém formato circular */
+}
+
+
 .rightColumn {
-  width: 100%;
-  padding: 0.8rem; /* Reduzido: 1rem → 0.8rem */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background: white;
+  justify-content: center; /* alinhamento vertical com a imagem */
 }
+
 .contentWrapper {
   width: 100%;
 }
+
 .sectionMarker{
   color: #416d97;
-  font-size: 0.7rem; /* Reduzido: 0.875rem → 0.7rem */
+  font-size: 0.7rem;
   font-weight: 500;
-  margin-bottom: 0.6rem; /* Reduzido: 0.75rem → 0.6rem */
-  display: block;
+  margin-bottom: 0.6rem;
   font-family: 'Inter', sans-serif;
 }
+
 .title {
-  font-size: 1.8rem; /* Reduzido: 2.25rem → 1.8rem */
+  font-size: 1.6rem;
   font-weight: 700;
   color: #262626;
-  margin-bottom: 0.8rem; /* Reduzido: 1rem → 0.8rem */
+  margin-bottom: 0.8rem;
   font-family: 'Inter', sans-serif;
 }
+
 .description {
-  font-size: 0.9rem; /* Reduzido: 1.125rem → 0.9rem */
+  font-size: 0.9rem;
   font-weight: 400;
   color: #262626;
   line-height: 1.75;
-  margin-bottom: 1.2rem; /* Reduzido: 1.5rem → 1.2rem */
+  margin-bottom: 1.2rem;
   font-family: 'Inter', sans-serif;
 }
-/* Seção das fundadoras */
+
+/* ================== FUNDADORAS ================== */
 .foundersSection {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem; /* Reduzido: 1rem → 0.8rem */
-  margin-bottom: 1.2rem; /* Reduzido: 1.5rem → 1.2rem */
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
 }
+
 .person {
   display: flex;
   flex-direction: row;
-  gap: 1.0rem; /* Reduzido: 0.75rem → 0.6rem */
+  gap: 1rem;
   align-items: flex-start;
 }
 
+.personImageContainer {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.personImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.personInfo {
+  flex: 1;
+}
 
 .personName {
-  font-size: 0.8rem; /* Reduzido: 1rem → 0.8rem */
+  font-size: 0.8rem;
   font-weight: 700;
-  color: #262626;
-  margin-bottom: 0.4rem; /* Reduzido: 0.5rem → 0.4rem */
+  margin-bottom: 0.4rem;
   font-family: 'Solway', sans-serif;
 }
 
 .personBio {
-  font-size: 0.9rem; /* Reduzido: 1.125rem → 0.9rem */
-  font-weight: 400;
-  color: #262626;
-  line-height: 1.75;
+  font-size: 0.9rem;
+  line-height: 1.5;
   font-family: 'Inter', sans-serif;
 }
 
-/* button */
-.whatsappButton{
+/* ================== BOTÃO ================== */
+.whatsappButton {
   padding: 12px 26px;
   border-radius: 20px;
   background-color: #0c4a6e;
@@ -130,77 +143,98 @@
   transition: 0.3s;
 }
 
-.personImage {
-  width: 100%;
+.whatsappButton:hover {
+  background-color: #0a3a57;
+}
+
+/* ================== EMBLEMAS ================== */
+.emblema1, .emblema2 {
+  display: none;
+}
+
+/* ================== RESPONSIVO ================== */
+
+/* Tablets médios */
+@media (max-width: 768px) {
+  
+
+  .title, .description {
+    text-align: left;
+  }
+  .imageWrapper {
+    transform: translateX(40px); /* desloca o círculo para a esquerda */
+  }
+
+  .profileImage {
+  width: 100%;          /* preenche totalmente o wrapper */
   height: 100%;
-  object-fit: cover;
-}
-.personInfo {
-  flex: 1;
-  text-align: left;
-}
-.personImageContainer {
-  margin-top: 20px; /* ajusta como quiser */
-}
-
-.emblema2 {
+        /* mantém proporção do wrapper */
+  object-fit: cover;    /* recorta se necessário, sem distorcer */
   display: block;
-  position: absolute;
-  right: 0;
-  width: 130px;
-  bottom: 50px; /* desceu 36px */
+  border-radius: 50%; 
+    /* mantém formato circular */
+
+  }
+  .foundersSection {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
-
-.container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-}
-
-.imageContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.emblema1 {
-  display: block;
-  position: absolute;
-  top: 460px;
-  left: 0;
-}
-.emblema1 img {
-  width: 220px; /* diminui aqui */
-  height: auto;
-}
-
-
-/* arrumando forma azul blue   */
 /* Desktop */
 @media (min-width: 1024px) {
+  .section {
+    flex-direction: row;
+    align-items: center; /* garante alinhamento vertical com a imagem */
+    justify-content: space-between;
+    min-height: 520px;
+    padding: 64px 32px;
+  }
+
   .blueBackground {
     display: block;
     position: absolute;
     left: 0;
     top: 0;
     height: 100%;
-    width: 35%; /* você ajusta depois */
+    width: 35%;
     background: #0c4a6e;
     clip-path: polygon(100% 0%, 50% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
     z-index: 0;
   }
 
-  .section {
-    display: flex;
-  }
-
   .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
     position: relative;
     z-index: 1;
   }
+
+  /* Emblemas */
+  /* Emblemas */
+  .emblema1, .emblema2 {
+    display: block;
+    position: absolute;
+  }
+
+  .emblema1 {
+    bottom: 0; /* agora o contêiner está no solo */
+    left: 50px; /* ajusta horizontalmente */
+  }
+
+  .emblema1 img {
+    width: 180px;
+    height: auto;
+    display: block;
+  }
+
+  .emblema2 {
+    bottom: 50px;
+    right: 0;
+    width: 100px;
+    height: auto;
+  }
+  
 }
