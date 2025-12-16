@@ -36,7 +36,7 @@ const Faq = () => {
   };
 
   return (
-    <div className={styles.faqResponsivo}>
+    <div id="faq" className={styles.faqResponsivo}>
       <div className={styles.container}>
         {/* ===== PRIMEIRO: Accordion com perguntas ===== */}
         <div className={styles.left}>

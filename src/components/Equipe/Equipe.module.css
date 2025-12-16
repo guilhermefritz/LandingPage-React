@@ -8,13 +8,34 @@
 /* Tipografia */
 .sectionTitle,
 .sectionMarker,
-.info h3,
-.registro,
-.titulo,
-.desc,
+
 .whatsappButton {
   font-weight: 600;
 }
+
+.info h3,.registro{
+  font-size: 26px;
+  margin :0px;
+  text-align: left;
+   line-height: 1.2;   
+   font-family:  'Inter', sans-serif;
+
+}
+
+  .info 
+  .titulo{
+ 
+    font-size: 18px;
+   
+    text-align: left;
+  }
+.info .desc{
+   font-size: 17px;
+   
+    text-align: left;
+
+}
+
 
 .sectionTitle {
   font-size: 1.8rem;
@@ -57,8 +78,8 @@
 }
 
 .fotoWrapper {
-  width: 210px;
-  height: 210px;
+  width: 285px;
+  height: 285px;
   border-radius: 50%;
   overflow: hidden;
   border: 10px solid #fff;
@@ -144,7 +165,7 @@
   }
 }
 
-/* Mobile */
+/* Mobile IPAD */
 @media screen and (max-width: 768px) {
   .sectionTitle {
     font-size: 1.3rem;
@@ -152,11 +173,7 @@
   .card {
     min-height: 450px;
   }
-  .fotoWrapper {
-    width: 150px;
-    height: 150px;
-    top: 60px;
-  }
+  
   .info h3,
   .registro,
   .titulo,
@@ -169,28 +186,54 @@
     padding: 10px 20px;
     font-size: 0.9rem;
   }
+
+  .fotoWrapper {
+    width: 240px;
+    height: 240px;
+    top: 50px;
+  }
 }
 
-/* Small Mobile */
+/* MOBILE CELULAR */
 @media screen and (max-width: 480px) {
   .container {
     padding: 30px 10px;
   }
   .sectionTitle {
-    font-size: 1.2rem;
+    font-size: 2.0rem;
+    font-family:  'Inter', sans-serif;
+    color:#1a1919;
   }
   .card {
     min-height: 400px;
   }
   .fotoWrapper {
-    width: 130px;
-    height: 130px;
+    width: 250px;
+    height: 250px;
     top: 50px;
   }
-  .info h3,
-  .registro,
-  .titulo,
-  .desc {
-    font-size: 13px;
+
+.info h3,.registro{
+  font-size: 26px;
+  margin :0px;
+  text-align: left;
+   line-height: 1.2;   
+   font-family:  'Inter', sans-serif;
+
+}
+
+  .info 
+  .titulo{
+ 
+    font-size: 18px;
+   
+    text-align: left;
   }
+.info .desc{
+   font-size: 17px;
+   
+    text-align: left;
+
+}
+
 }

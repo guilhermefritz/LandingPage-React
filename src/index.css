@@ -16,6 +16,12 @@ body {
   
 }
 
+.headerBackground {
+  background-color: #F5F2EF;
+  padding: 20px 0;
+}
+
+
 .app {
   min-height: 100vh;
   background-color: #ffffff;
